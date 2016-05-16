@@ -1,0 +1,1 @@
+Create a different encryption algorithm depending on the day of the month, week, etc.

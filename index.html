@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Cute Decoder</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/clipboard.min.js"></script>
+    <script src="Scripts/ngclipboard.min.js"></script>
+    <script src="Scripts/ngclipboard.js"></script>
+    <script src="Scripts/jquery-1.12.1.min.js"></script>
+    <script src="Scripts/jquery-1.12.1.js"></script>
+    <script src="Scripts/Script.js"></script>
+    <script src="Scripts/hoverScript.js"></script>
+    <!--<script src="Scripts/heartScript.js"></script>-->
+    <link href="Styles.css" rel="stylesheet" />
+    <link rel="icon" href="Images/coco.png" type="image/png">
+</head>
+<body ng-app="myModule">
+   <canvas id="canvas"></canvas>
+    <div id="image_container">
+        <img src="Images/massivebunny.png" alt="image of wabbit" />
+    </div>
+    
+    <div id="main_container" ng-controller="myController">
+
+   
+    <h1>Cute Decoder</h1>
+
+        <h4 style="display:inline">Generate a secret code...</h4>
+        
+        <!-- carrot button copies generated code to clipboard -->
+        <button class="masterTooltip" title="♥ Copy to clipboard !! ^__^" ngclipboard data-clipboard-action="copy" data-clipboard-target="#myMessage">
+            <img src="Images/carrot.png" width="20" height="20" alt="Copy to clipboard">
+        </button>
+        <br>
+        <br>
+        
+     	<textarea rows="4" cols="50" placeholder="Enter a story..." ng-model="secret_code"></textarea>
+       	<p id="myMessage">{{ secretHash(secret_code, alphabet, decoder) }}</p>
+
+        <h4>Or undercover a hidden message...</h4>
+        <textarea rows="4" cols="50" placeholder="Enter a secret code..." ng-model="secret_decode" ></textarea>
+        <p id="myCode">{{ secretHash(secret_decode, decoder, alphabet) }}</p>
+  
+
+    </div>
+</body>
+</html>

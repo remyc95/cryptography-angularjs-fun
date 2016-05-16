@@ -1,0 +1,6 @@
+Effeciently combined 2 functions into one by passing in two array parameters
+Added a button to copy the secret code generated
+Added an Images directory to store all pictures in a single folder
+Imported JQuery
+Used JQuery for hover effects
+Included box shadow for main container
